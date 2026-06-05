@@ -23,22 +23,71 @@ This repository helps teams:
 
 ## Repository Structure
 
-| Section | Purpose |
-|---|---|
-| 01-strategy | Charter, operating model, RACI |
-| 02-governance | Policies, standards, controls |
-| 03-showback-chargeback | Allocation and chargeback models |
-| 04-budgeting-forecasting | Budget and forecast practices |
-| 05-kpis | FinOps KPI dictionary |
-| 06-aws | AWS FinOps practices |
-| 07-azure | Azure FinOps practices |
-| 08-gcp | GCP FinOps practices |
-| 09-kubernetes | Kubernetes cost management |
-| 10-ai-finops | AI cost governance |
-| 13-optimization-playbooks | Cost optimization runbooks |
-| 14-anomaly-management | Detection and response process |
-| 15-executive-reporting | Monthly review templates |
-| 20-assessments | Maturity assessments |
+## Repository Structure
+
+### Strategy
+
+* [FinOps Charter](./01-strategy/finops-charter.md)
+* [Operating Model](./01-strategy/operating-model.md)
+
+### Allocation
+
+* [Showback and Chargeback Framework](./03-showback-chargeback/chargeback-framework.md)
+
+### KPIs
+
+* [FinOps KPI Dictionary](./05-kpis/kpi-dictionary.md)
+
+### AI FinOps
+
+* [AI FinOps Governance Framework](./10-ai-finops/ai-governance-framework.md)
+
+### Optimization
+
+* [AWS Cost Optimization Playbook](./13-optimization-playbooks/aws-playbook.md)
+* [Azure Cost Optimization Playbook](./13-optimization-playbooks/azure-playbook.md)
+
+### Operations
+
+* [Cost Anomaly Management Runbook](./14-anomaly-management/anomaly-runbook.md)
+
+### Executive Reporting
+
+* [Monthly Executive Review Template](./15-executive-reporting/monthly-review-template.md)
+
+### Assessments
+
+* [FinOps Maturity Assessment](./20-assessments/maturity-assessment.md)
+
+---
+
+## Roadmap
+
+### Version 1.0
+
+Completed:
+
+* FinOps Charter
+* KPI Dictionary
+* AI FinOps Governance Framework
+* Showback and Chargeback Framework
+* AWS Cost Optimization Playbook
+* Cost Anomaly Management Runbook
+* Executive Reporting Template
+* FinOps Maturity Assessment
+
+### Planned
+
+* Operating Model
+* Azure Optimization Playbook
+* Kubernetes FinOps Framework
+* Forecasting Framework
+* Dashboard Library
+* SQL Library
+* Automation Library
+* SaaS FinOps Framework
+* Data Platform FinOps Framework
+
 
 ## Version 1 Focus
 
