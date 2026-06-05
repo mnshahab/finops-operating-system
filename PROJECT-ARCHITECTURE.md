@@ -6,6 +6,7 @@ Naming standards
 Required artifacts
 
 Example:
+
 01-strategy
 02-governance
 03-cost-allocation
