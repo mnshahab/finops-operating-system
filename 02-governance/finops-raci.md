@@ -5,7 +5,7 @@
 | Owner        | FinOps Team |
 | Version      | 1.0         |
 | Status       | Active      |
-| Last Updated | 2026-06-08  |
+| Last Updated | YYYY-MM-DD |
 | Review Cycle | Annual      |
 
 ---
