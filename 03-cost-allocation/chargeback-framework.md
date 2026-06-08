@@ -1,408 +1,359 @@
-# Showback and Chargeback Framework
+# Chargeback Framework
 
-## Purpose
-
-This framework establishes a standardized approach for allocating, reporting, and recovering technology costs across business units, applications, products, and teams.
-
-The goal is to create transparency, accountability, and informed decision-making while ensuring technology investments are aligned with business objectives.
-
----
-
-# Overview
-
-Organizations cannot effectively manage technology costs without ownership.
-
-Showback and chargeback provide visibility into who consumes technology resources and how those costs impact the business.
-
-## Showback
-
-Showback reports technology costs to consumers without financial transfer.
-
-Business units receive visibility into their consumption and spending but are not directly charged.
-
-### Benefits
-
-* Builds cost awareness
-* Encourages accountability
-* Improves transparency
-* Simplifies adoption
+| Attribute    | Value       |
+| ------------ | ----------- |
+| Owner        | FinOps Team |
+| Version      | 1.0         |
+| Status       | Active      |
+| Last Updated | YYYY-MM-DD  |
+| Review Cycle | Annual      |
 
 ---
 
-## Chargeback
+# Purpose
 
-Chargeback allocates technology costs directly to consuming business units, departments, products, or cost centers.
+This document establishes the framework for recovering cloud costs from the business units, products, applications, and teams responsible for consuming cloud resources.
 
-### Benefits
+The objective of chargeback is to align cloud spending with financial accountability, improve cost transparency, support budgeting and forecasting activities, and encourage responsible cloud consumption.
 
-* Creates financial accountability
-* Improves budgeting accuracy
-* Encourages cost optimization
-* Aligns consumption with business value
+This framework aligns with FinOps Foundation principles of accountability, visibility, collaboration, and business value realization.
 
 ---
 
-# Framework Objectives
+# Scope
 
-## Visibility
+This framework applies to:
 
-Provide clear visibility into technology consumption and spend.
-
-### Success Measures
-
-* Allocation coverage above 95%
-* Consistent reporting
-* Business unit ownership
-
----
-
-## Accountability
-
-Assign ownership for technology consumption.
-
-### Success Measures
-
-* Named cost owners
-* Product ownership
-* Business accountability
+* AWS
+* Microsoft Azure
+* Google Cloud Platform
+* Kubernetes Platforms
+* AI and Machine Learning Workloads
+* Shared Services Platforms
+* Product Teams
+* Corporate IT Workloads
+* Enterprise Support Services
 
 ---
 
-## Financial Management
+# Guiding Principles
 
-Support budgeting, forecasting, and planning activities.
+## Accountability Through Financial Ownership
 
-### Success Measures
-
-* Improved forecast accuracy
-* Reduced budget variance
-* Better investment decisions
+Teams consuming cloud services should be financially accountable for the costs incurred.
 
 ---
 
-# Allocation Hierarchy
+## Transparency Before Chargeback
 
-Technology costs should be allocated using the following priority order.
-
-| Priority | Allocation Method          |
-| -------- | -------------------------- |
-| 1        | Direct Resource Tagging    |
-| 2        | Application Ownership      |
-| 3        | Product Ownership          |
-| 4        | Business Unit Mapping      |
-| 5        | Shared Service Allocation  |
-| 6        | Enterprise Allocation Pool |
+Chargeback should only be implemented after stakeholders have sufficient visibility into their cloud consumption through established reporting and showback processes.
 
 ---
 
-# Cost Categories
+## Consistency Across the Organization
+
+Chargeback methodologies should be applied consistently across business units and reporting periods.
+
+---
+
+## Simplicity and Understandability
+
+Chargeback calculations should be understandable by business, finance, and technology stakeholders.
+
+---
+
+## Fair Cost Distribution
+
+Costs should be allocated using methodologies that reasonably reflect actual consumption and business ownership.
+
+---
+
+## Governance Driven
+
+All chargeback methodologies should be approved and reviewed through established governance processes.
+
+---
+
+# Chargeback Model Overview
+
+Chargeback transfers cloud costs from centralized cloud budgets to the business units, products, or applications responsible for consuming resources.
+
+The model enables organizations to:
+
+* Establish financial accountability
+* Improve budgeting accuracy
+* Encourage optimization behaviors
+* Support product profitability analysis
+* Improve investment decisions
+* Align cloud spending with business outcomes
+
+---
+
+# Chargeback Hierarchy
+
+Cloud costs should be assigned through a structured ownership hierarchy.
+
+```text
+Cloud Provider
+    │
+Account / Subscription / Project
+    │
+Business Unit
+    │
+Product or Service
+    │
+Application
+    │
+Cost Center
+```
+
+Organizations may adjust the hierarchy based on operating model requirements.
+
+---
+
+# Chargeback Cost Categories
 
 ## Direct Costs
 
-Costs directly attributable to a team, application, or business unit.
+Direct costs are assigned directly to a consuming owner.
 
 Examples:
 
-* Compute
-* Storage
+* Compute services
 * Databases
-* AI Services
-* Dedicated Kubernetes Clusters
+* Storage services
+* AI services
+* Dedicated Kubernetes clusters
+* Application-specific networking
 
-Allocation Method:
-
-Direct assignment.
+Direct costs should be charged to the consuming business owner.
 
 ---
 
 ## Shared Costs
 
-Costs supporting multiple teams or business units.
+Shared costs support multiple consumers.
 
 Examples:
 
-* Networking
-* Security Platforms
-* Shared Kubernetes Platforms
-* Monitoring Solutions
-* Shared Data Platforms
+* Shared Kubernetes platforms
+* Central networking
+* Security services
+* Monitoring platforms
+* Identity services
+* Shared data platforms
 
-Allocation Method:
-
-Consumption-based allocation whenever possible.
+Shared costs should be allocated using approved allocation methodologies.
 
 ---
 
 ## Enterprise Costs
 
-Costs benefiting the entire organization.
+Enterprise costs support organization-wide capabilities.
 
 Examples:
 
-* Enterprise Agreements
-* Shared Licenses
-* Central Governance Platforms
+* FinOps tooling
+* Governance platforms
+* Enterprise support agreements
+* Enterprise observability platforms
 
-Allocation Method:
-
-Defined corporate allocation methodology.
-
----
-
-# Required Metadata Standards
-
-Every workload should include the following metadata.
-
-| Field         | Required    |
-| ------------- | ----------- |
-| Application   | Yes         |
-| Business Unit | Yes         |
-| Cost Center   | Yes         |
-| Owner         | Yes         |
-| Environment   | Yes         |
-| Product       | Recommended |
-| Project       | Recommended |
+Organizations may choose to recover these costs through chargeback or retain them as centrally funded services.
 
 ---
 
-# Recommended Allocation Models
+# Chargeback Methods
 
-## Direct Allocation
+## Consumption-Based Chargeback
 
-Used when ownership is known.
-
-Formula:
-
-```text
-Resource Cost = Assigned Directly To Owner
-```
-
-Preferred approach.
-
----
-
-## Consumption-Based Allocation
-
-Used for shared services.
-
-Formula:
-
-```text
-Business Unit Usage ÷ Total Usage × Shared Cost
-```
+Costs are assigned according to actual resource consumption.
 
 Examples:
 
-* Storage consumption
-* CPU usage
+* CPU utilization
 * Memory usage
+* Storage consumption
 * Network traffic
+* GPU utilization
 * API requests
 
----
-
-## Equal Distribution
-
-Used when consumption metrics are unavailable.
-
-Formula:
-
-```text
-Shared Cost ÷ Number Of Participants
-```
-
-Use only as a temporary solution.
+This method should be preferred whenever reliable consumption data exists.
 
 ---
 
-## Revenue-Based Allocation
+## Fixed Allocation Chargeback
 
-Used when business value is closely linked to revenue generation.
+Costs are distributed according to predefined allocation percentages.
 
-Formula:
+Examples:
 
-```text
-Business Unit Revenue ÷ Total Revenue × Shared Cost
-```
+* Shared management services
+* Governance platforms
+* Enterprise support services
 
----
-
-# Shared Service Allocation Examples
-
-## Shared Kubernetes Platform
-
-Possible allocation drivers:
-
-* CPU requests
-* CPU usage
-* Memory requests
-* Memory usage
-* Namespace ownership
+Allocation percentages should be reviewed periodically.
 
 ---
 
-## Shared Data Platform
+## Business Driver Chargeback
 
-Possible allocation drivers:
+Costs are allocated using business metrics that correlate with resource consumption.
 
-* Storage consumed
-* Query volume
-* Processing hours
-* Data transferred
+Examples:
 
----
+* Active users
+* Customer count
+* Revenue contribution
+* Transactions processed
 
-## Shared AI Platform
-
-Possible allocation drivers:
-
-* Token consumption
-* Inference requests
-* GPU usage
-* Model usage
+This method may be used when technical consumption metrics are unavailable.
 
 ---
 
-# Showback Reporting
+# Chargeback Calculation Requirements
 
-Recommended reporting dimensions:
+Chargeback calculations should be:
 
-* Business Unit
-* Product
-* Application
-* Environment
-* Cloud Provider
-* Team
-* Cost Center
+* Documented
+* Repeatable
+* Auditable
+* Consistent
+* Transparent
 
-### Monthly Report Content
-
-* Current Spend
-* Previous Spend
-* Budget
-* Forecast
-* Variance
-* Top Cost Drivers
-* Optimization Opportunities
+Calculation methodologies should be approved through governance processes and communicated to affected stakeholders.
 
 ---
 
-# Chargeback Reporting
+# Roles and Responsibilities
+
+| Function         | Responsibility                       |
+| ---------------- | ------------------------------------ |
+| Finance          | Financial processing and reporting   |
+| FinOps           | Chargeback methodology and reporting |
+| Engineering      | Resource ownership validation        |
+| Product Teams    | Cost review and accountability       |
+| Business Leaders | Budget ownership                     |
+| Leadership       | Policy approval and oversight        |
+
+---
+
+# Chargeback Process
+
+## Step 1: Resource Ownership Validation
+
+Validate ownership attributes and allocation mappings.
+
+---
+
+## Step 2: Cost Collection
+
+Collect cloud billing and consumption data from approved sources.
+
+---
+
+## Step 3: Cost Allocation
+
+Apply approved allocation methodologies to direct and shared costs.
+
+---
+
+## Step 4: Chargeback Calculation
+
+Calculate chargeback amounts by business unit, product, application, or cost center.
+
+---
+
+## Step 5: Financial Review
+
+Validate chargeback results with Finance and FinOps stakeholders.
+
+---
+
+## Step 6: Reporting and Distribution
+
+Distribute chargeback reports to accountable stakeholders.
+
+---
+
+## Step 7: Governance Review
+
+Review methodology effectiveness and address disputes or exceptions.
+
+---
+
+# Chargeback Reporting Requirements
 
 Chargeback reports should include:
 
-* Allocated Costs
-* Shared Service Costs
-* Enterprise Allocations
-* Total Charges
-* Cost Trends
-* Forecasted Charges
+* Total cloud spend
+* Direct costs
+* Shared costs
+* Enterprise costs
+* Allocation methodology references
+* Historical trends
+* Budget comparisons
+* Forecast comparisons
+* Variance analysis
+
+Reports should be available to business, finance, engineering, and executive stakeholders.
 
 ---
 
-# Allocation Coverage KPI
+# Chargeback Dispute Process
 
-## Definition
+Organizations should establish a formal dispute process.
 
-Percentage of spend assigned to an owner.
+Disputes should include:
 
-### Formula
+* Ownership validation
+* Allocation review
+* Methodology verification
+* Financial validation
+* Governance review
 
-```text
-Allocated Spend ÷ Total Spend × 100
-```
-
-### Target
-
-```text
-95%+
-```
+All approved adjustments should be documented.
 
 ---
 
-# Governance Process
+# Governance Requirements
 
-## Monthly
+Chargeback methodologies should be reviewed periodically.
 
-* Review allocation coverage
-* Validate ownership
-* Review shared service allocations
-* Review new workloads
+Review activities should include:
 
----
+* Allocation accuracy
+* Financial alignment
+* Business alignment
+* Shared cost methodologies
+* Emerging technologies
+* AI workload allocation models
+* Kubernetes platform allocation models
 
-## Quarterly
-
-* Review allocation methodology
-* Review chargeback accuracy
-* Review business alignment
-* Update allocation drivers
+Changes should be approved through the FinOps governance process.
 
 ---
 
-# Common Challenges
+# Success Measures
 
-## Missing Ownership
+An effective chargeback framework should result in:
 
-Solution:
-
-Enforce ownership requirements during provisioning.
-
----
-
-## Shared Resource Complexity
-
-Solution:
-
-Use measurable consumption metrics whenever possible.
+* Improved financial accountability
+* Reduced unallocated spend
+* Better budgeting accuracy
+* Improved forecasting accuracy
+* Increased optimization ownership
+* Greater business visibility
+* Improved cost transparency
 
 ---
 
-## Inconsistent Metadata
+# Related Documents
 
-Solution:
-
-Implement governance policies and validation controls.
-
----
-
-## Allocation Disputes
-
-Solution:
-
-Document allocation rules and review them regularly with stakeholders.
-
----
-
-# Maturity Model
-
-| Level | Description                                                  |
-| ----- | ------------------------------------------------------------ |
-| Crawl | Basic showback with limited ownership                        |
-| Walk  | Standardized showback with shared cost allocation            |
-| Run   | Full chargeback with business accountability and forecasting |
-
----
-
-# Success Criteria
-
-The framework is successful when:
-
-* Allocation coverage exceeds 95%
-* Business units understand their costs
-* Forecast accuracy improves
-* Shared costs are transparent
-* Technology spending supports business objectives
-
----
-
-# Document Information
-
-| Item             | Value                             |
-| ---------------- | --------------------------------- |
-| Document         | Showback and Chargeback Framework |
-| Version          | 1.0                               |
-| Status           | Active                            |
-| Owner            | FinOps Team                       |
-| Review Frequency | Quarterly                         |
-| Last Updated     | 2026                              |
+* allocation-framework.md
+* shared-cost-allocation.md
+* showback-framework.md
+* tagging-standards.md
+* cost-accountability-model.md
+* governance-framework.md
+* finops-raci.md
+* kpi-dictionary.md
