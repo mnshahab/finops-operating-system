@@ -1,459 +1,272 @@
 # Budgeting and Forecasting
 
-## Purpose
+## Overview
 
-Budgeting and forecasting enable organizations to plan, manage, and optimize technology investments while maintaining financial accountability.
+Budgeting and forecasting are foundational FinOps capabilities that enable organizations to proactively manage cloud spending, align technology investments with business objectives, and improve financial predictability.
 
-This section provides frameworks, templates, methodologies, and best practices for building accurate budgets, improving forecast accuracy, and supporting business decision-making across cloud, AI, SaaS, Kubernetes, and data platforms.
+As cloud adoption grows, traditional annual budgeting approaches are often insufficient due to the variable and consumption-based nature of cloud services. Effective cloud financial management requires continuous forecasting, regular variance analysis, and ongoing collaboration between Finance, Engineering, Product, and FinOps teams.
 
-The objective is to move from reactive spending management to proactive financial planning.
+This section provides frameworks, processes, and governance guidance for managing cloud budgets, forecasts, commitments, and financial performance across multi-cloud environments.
+
+The practices described in this section align with FinOps Foundation principles of visibility, accountability, collaboration, and business value realization.
 
 ---
 
 # Objectives
 
-## Financial Predictability
+The objectives of budgeting and forecasting are to:
 
-Improve visibility into future spending and business demand.
-
----
-
-## Budget Accountability
-
-Ensure business units, product teams, and technology owners understand and manage their technology investments.
-
----
-
-## Forecast Accuracy
-
-Improve confidence in financial planning through consistent forecasting practices.
+* Establish financial accountability for cloud consumption.
+* Improve predictability of cloud spending.
+* Support strategic planning and investment decisions.
+* Align technology consumption with business objectives.
+* Enable proactive financial management.
+* Improve forecast accuracy over time.
+* Support commitment planning activities.
+* Identify financial risks and opportunities early.
 
 ---
 
-## Decision Support
+# Scope
 
-Provide leadership teams with reliable information for investment and prioritization decisions.
+This section applies to:
+
+* AWS
+* Microsoft Azure
+* Google Cloud Platform
+* Kubernetes Platforms
+* AI and Machine Learning Workloads
+* Shared Services Platforms
+* Product Teams
+* Corporate IT Workloads
+* Enterprise Cloud Services
+
+---
+
+# Core Capabilities
+
+The budgeting and forecasting domain consists of four primary capabilities.
+
+## Budget Management
+
+Establishes financial targets and spending expectations for cloud consumption.
+
+Topics include:
+
+* Budget ownership
+* Budget planning
+* Budget governance
+* Budget review processes
+* Budget accountability
+
+Document:
+
+* budget-framework.md
+
+---
+
+## Forecast Management
+
+Projects future cloud spending based on historical consumption, planned initiatives, growth expectations, and business demand.
+
+Topics include:
+
+* Forecast creation
+* Forecast methodologies
+* Forecast reviews
+* Forecast ownership
+* Forecast governance
+
+Document:
+
+* forecasting-framework.md
+
+---
+
+## Variance Management
+
+Measures differences between planned and actual spending to improve financial performance and forecasting accuracy.
+
+Topics include:
+
+* Budget variance analysis
+* Forecast variance analysis
+* Root cause analysis
+* Corrective actions
+* Reporting requirements
+
+Document:
+
+* variance-management.md
+
+---
+
+## Commitment Planning
+
+Supports financial planning and optimization of cloud commitments.
+
+Topics include:
+
+* Savings Plans
+* Reserved Instances
+* Committed Use Discounts
+* Capacity reservations
+* Enterprise agreements
+* Commitment governance
+
+Document:
+
+* commitment-planning.md
+
+---
+
+# Budgeting and Forecasting Lifecycle
+
+The budgeting and forecasting process should operate as a continuous cycle.
+
+```text
+Strategy and Planning
+          │
+          ▼
+Budget Development
+          │
+          ▼
+Forecast Creation
+          │
+          ▼
+Monthly Review
+          │
+          ▼
+Variance Analysis
+          │
+          ▼
+Corrective Actions
+          │
+          ▼
+Forecast Updates
+          │
+          ▼
+Continuous Improvement
+```
+
+This cycle should be integrated into existing financial and operational planning processes.
+
+---
+
+# Key Stakeholders
+
+Successful budgeting and forecasting require collaboration across multiple functions.
+
+| Stakeholder    | Primary Responsibility               |
+| -------------- | ------------------------------------ |
+| Finance        | Financial planning and governance    |
+| FinOps         | Analysis, forecasting, and reporting |
+| Engineering    | Consumption planning                 |
+| Product Teams  | Demand planning                      |
+| Platform Teams | Shared services forecasting          |
+| Leadership     | Strategic oversight and approvals    |
 
 ---
 
 # Budgeting Principles
 
-## Ownership
+Effective cloud budgeting should:
 
-Every technology investment should have an identified owner.
+* Align with business objectives.
+* Reflect expected cloud consumption.
+* Support accountability.
+* Be reviewed regularly.
+* Adapt to changing business requirements.
+* Support optimization initiatives.
 
-Examples:
-
-* Business Unit
-* Product Team
-* Application Owner
-* Platform Team
-
----
-
-## Alignment
-
-Budgets should align with:
-
-* Business objectives
-* Product roadmaps
-* Technology strategies
-* Capacity requirements
-
----
-
-## Transparency
-
-Budget assumptions should be visible and documented.
-
----
-
-## Continuous Review
-
-Budgets should be reviewed regularly and adjusted when business conditions change.
+Budgets should be viewed as planning tools rather than spending limits alone.
 
 ---
 
 # Forecasting Principles
 
-## Data Driven
+Effective cloud forecasting should:
 
-Forecasts should be based on:
+* Use reliable consumption data.
+* Incorporate business demand signals.
+* Consider growth trends.
+* Reflect planned initiatives.
+* Include known risks and assumptions.
+* Be updated regularly.
 
-* Historical consumption
-* Growth trends
-* Business demand
-* Planned initiatives
-
----
-
-## Continuous Forecasting
-
-Forecasts should be updated monthly rather than annually.
+Forecasts should improve as additional consumption data becomes available.
 
 ---
 
-## Scenario Planning
+# Reporting Requirements
 
-Organizations should maintain:
+Budgeting and forecasting reports should provide visibility into:
 
-* Base Case Forecast
-* Optimistic Forecast
-* Conservative Forecast
+* Budget performance
+* Forecast performance
+* Variance analysis
+* Cost drivers
+* Business unit trends
+* Product trends
+* Shared service costs
+* Commitment utilization
+* Financial risks and opportunities
 
----
-
-# Budget Categories
-
-## Cloud Infrastructure
-
-Examples:
-
-* Compute
-* Storage
-* Databases
-* Networking
+Reports should be available to both financial and technical stakeholders.
 
 ---
 
-## AI and Machine Learning
+# Governance Requirements
 
-Examples:
+Budgeting and forecasting activities should be governed through established FinOps processes.
 
-* GPU Infrastructure
-* Model Consumption
-* Training Environments
-* Inference Services
+Governance activities should include:
 
----
+* Budget approvals
+* Forecast reviews
+* Variance reviews
+* Commitment reviews
+* Executive reporting
+* Continuous improvement initiatives
 
-## SaaS Platforms
-
-Examples:
-
-* Productivity Platforms
-* Development Tools
-* Security Solutions
-
----
-
-## Data Platforms
-
-Examples:
-
-* Warehouses
-* Data Lakes
-* Analytics Services
-
----
-
-## Shared Services
-
-Examples:
-
-* Monitoring
-* Security
-* Platform Operations
-* Shared Kubernetes Clusters
-
----
-
-# Forecasting Inputs
-
-## Historical Consumption
-
-Review:
-
-* 3 Month Trend
-* 6 Month Trend
-* 12 Month Trend
-
----
-
-## Business Growth
-
-Review:
-
-* Customer Growth
-* Transaction Growth
-* Product Adoption
-
----
-
-## Technology Changes
-
-Review:
-
-* Migrations
-* New Platforms
-* New Services
-* Infrastructure Expansion
-
----
-
-## Optimization Activities
-
-Review:
-
-* Rightsizing Plans
-* Commitment Purchases
-* Storage Optimization
-* AI Optimization Initiatives
-
----
-
-# Recommended Forecasting Process
-
-## Step 1
-
-Collect historical spending data.
-
-Sources:
-
-* AWS Cost and Usage Reports
-* Azure Cost Management
-* GCP Billing Data
-* SaaS Billing Reports
-
----
-
-## Step 2
-
-Identify growth drivers.
-
-Examples:
-
-* New products
-* Customer growth
-* AI adoption
-* Platform expansion
-
----
-
-## Step 3
-
-Adjust for optimization initiatives.
-
-Examples:
-
-* Rightsizing
-* Commitment purchases
-* Storage reductions
-
----
-
-## Step 4
-
-Build forecast scenarios.
-
-* Base Case
-* High Growth
-* Conservative
-
----
-
-## Step 5
-
-Review and approve forecast.
-
-Participants:
-
-* FinOps
-* Engineering
-* Product
-* Finance
-
----
-
-# Budget Management Process
-
-## Annual Planning
-
-Activities:
-
-* Budget creation
-* Capacity planning
-* Strategic investment planning
-
----
-
-## Quarterly Review
-
-Activities:
-
-* Budget validation
-* Variance review
-* Forecast adjustments
-
----
-
-## Monthly Review
-
-Activities:
-
-* Actual versus budget review
-* Forecast updates
-* Risk identification
-
----
-
-# Key Performance Indicators
-
-## Forecast Accuracy
-
-### Formula
-
-```text id="b2vkms"
-1 - (|Forecast - Actual| ÷ Actual)
-```
-
-### Target
-
-```text id="7aol4q"
-95%+
-```
-
----
-
-## Budget Variance
-
-### Formula
-
-```text id="1h6dx5"
-(Actual Spend - Budget) ÷ Budget × 100
-```
-
-### Target
-
-```text id="qjjbzh"
-Within ±5%
-```
-
----
-
-## Forecast Variance
-
-### Formula
-
-```text id="oiv4qh"
-(Actual Spend - Forecast) ÷ Forecast × 100
-```
-
-### Target
-
-```text id="vqoncp"
-Within ±5%
-```
-
----
-
-# Forecast Risk Assessment
-
-Review the following:
-
-* Rapid growth services
-* AI workload expansion
-* Commitment utilization trends
-* Seasonal demand
-* New project launches
-* Vendor pricing changes
-
----
-
-# Executive Reporting Metrics
-
-Recommended metrics:
-
-* Actual Spend
-* Budget
-* Forecast
-* Variance
-* Forecast Accuracy
-* Spend Growth
-* Top Cost Drivers
-* Optimization Impact
-* AI Spend Trends
-
----
-
-# Common Forecasting Challenges
-
-## Poor Allocation
-
-Impact:
-
-Forecast ownership becomes unclear.
-
----
-
-## Missing Business Context
-
-Impact:
-
-Forecasts fail to reflect upcoming demand.
-
----
-
-## Rapid AI Growth
-
-Impact:
-
-Forecast volatility increases.
-
----
-
-## Inconsistent Reporting
-
-Impact:
-
-Reduced trust in forecast outputs.
-
----
-
-# Planned Documents
-
-Future content for this section:
-
-* Annual Budget Planning Template
-* Monthly Forecast Review Template
-* Forecasting Methodology Guide
-* Unit Economics Framework
-* AI Forecasting Framework
-* Commitment Planning Framework
+Review cadences should align with organizational planning cycles.
 
 ---
 
 # Success Measures
 
-A mature budgeting and forecasting practice should achieve:
+An effective budgeting and forecasting practice should result in:
 
-* Forecast Accuracy Above 95%
-* Budget Variance Within ±5%
-* Monthly Forecast Updates
-* Clear Budget Ownership
-* Executive Confidence in Forecasts
-* Alignment Between Technology Spend and Business Demand
+* Improved budget accuracy
+* Improved forecast accuracy
+* Better financial visibility
+* Reduced financial surprises
+* Increased accountability
+* Improved commitment planning
+* Better business alignment
+* Improved decision-making
+
+---
+
+# Documents in This Section
+
+* budget-framework.md
+* forecasting-framework.md
+* variance-management.md
+* commitment-planning.md
 
 ---
 
 # Related Documents
 
-* FinOps Charter
-* FinOps Operating Model
-* KPI Dictionary
-* Monthly Executive Review
-* Showback and Chargeback Framework
-* AI FinOps Governance Framework
+* finops-charter.md
+* operating-model.md
+* governance-framework.md
+* cost-accountability-model.md
+* allocation-framework.md
+* showback-framework.md
+* chargeback-framework.md
+* kpi-dictionary.md
+* executive-reporting-framework.md
 
----
-
-# Document Information
-
-| Item             | Value                              |
-| ---------------- | ---------------------------------- |
-| Document         | Budgeting and Forecasting Overview |
-| Version          | 1.0                                |
-| Status           | Active                             |
-| Owner            | FinOps Team                        |
-| Review Frequency | Quarterly                          |
-| Last Updated     | 2026                               |
+This section establishes the financial planning and performance management practices required to support sustainable cloud operations and informed business decision-making.
