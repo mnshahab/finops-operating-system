@@ -1,0 +1,148 @@
+# FinOps Operating System - Project Context
+
+## Project Objective
+
+Build an enterprise-grade, open-source FinOps Operating System that provides governance frameworks, operating models, templates, KPIs, dashboards, optimization playbooks, AI FinOps guidance, Kubernetes FinOps practices, FOCUS standards, unit economics models, automation patterns, and case studies.
+
+The repository should align with current FinOps Foundation principles while remaining vendor-neutral and practical for enterprise adoption.
+
+---
+
+## Design Principles
+
+* FinOps Foundation aligned
+* Vendor neutral where possible
+* Enterprise focused
+* Practical and implementation oriented
+* Humanized and professional
+* No fabricated metrics or savings claims
+* No arbitrary staffing models
+* No invented maturity targets
+* Business value focused
+* Multi-cloud by design
+* AI FinOps included
+* Kubernetes FinOps included
+
+---
+
+## Repository Structure
+
+01-strategy
+
+02-governance
+
+03-cost-allocation
+
+04-budgeting-forecasting
+
+05-kpis
+
+06-aws
+
+07-azure
+
+08-gcp
+
+09-kubernetes
+
+10-ai-finops
+
+11-templates
+
+12-dashboard-library
+
+13-optimization-playbooks
+
+14-anomaly-management
+
+15-executive-reporting
+
+16-engineering-reviews
+
+17-sql-library
+
+18-automation-library
+
+19-tools
+
+20-assessments
+
+21-unit-economics
+
+22-case-studies
+
+23-focus
+
+---
+
+## Completed Sections
+
+### Root
+
+* README.md
+* PROJECT-VISION.md
+* PROJECT-ARCHITECTURE.md
+* PROJECT-BACKLOG.md
+* STANDARDS.md
+* DECISIONS.md
+* CONTRIBUTING.md
+* LICENSE
+
+### Strategy
+
+* finops-charter.md
+* operating-model.md
+* organizational-structure.md
+* roadmap.md
+
+### Governance
+
+* governance-framework.md
+* finops-raci.md
+* cost-accountability-model.md
+* policy-framework.md
+
+---
+
+## Content Requirements
+
+All future content must:
+
+* Follow STANDARDS.md
+* Use enterprise terminology
+* Align with FinOps Foundation guidance
+* Be practical and implementation focused
+* Avoid marketing language
+* Avoid exaggerated savings claims
+* Avoid fictional examples presented as facts
+* Maintain consistency with previously created documents
+
+---
+
+## Current Priority
+
+Complete repository sections in this order:
+
+1. Cost Allocation
+2. Budgeting & Forecasting
+3. KPIs
+4. AWS
+5. Azure
+6. GCP
+7. Optimization Playbooks
+8. Anomaly Management
+9. Executive Reporting
+10. Unit Economics
+11. Case Studies
+12. FOCUS
+
+---
+
+## Review Requirement
+
+Before creating any new artifact:
+
+* Check consistency with Strategy documents.
+* Check consistency with Governance documents.
+* Ensure terminology remains consistent across the repository.
+* Avoid duplicate content between sections.
