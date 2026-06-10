@@ -1,247 +1,385 @@
-# FinOps KPI Dictionary
+# KPI Dictionary
 
-## Purpose
-
-This document provides standardized FinOps Key Performance Indicators (KPIs) used to measure financial accountability, optimization effectiveness, forecasting accuracy, and technology value across cloud, AI, SaaS, Kubernetes, and data platforms.
-
-A common KPI framework helps Engineering, Finance, Product, and Leadership teams make decisions using the same definitions and measurements.
-
----
-
-# KPI Categories
-
-1. Visibility and Allocation
-2. Financial Management
-3. Optimization
-4. Commitment Management
-5. Unit Economics
-6. AI FinOps
-7. Operational Excellence
+| Attribute    | Value       |
+| ------------ | ----------- |
+| Owner        | FinOps Team |
+| Version      | 1.0         |
+| Status       | Active      |
+| Last Updated | YYYY-MM-DD  |
+| Review Cycle | Annual      |
 
 ---
 
-# Visibility and Allocation KPIs
+# Purpose
+
+This document serves as the authoritative source for all Key Performance Indicator (KPI) definitions used throughout the FinOps Operating System.
+
+The objective is to establish standardized metric definitions, calculation methodologies, ownership models, reporting frequencies, and data requirements to ensure consistency across financial reporting, executive dashboards, operational reviews, optimization programs, and governance activities.
+
+This KPI Dictionary aligns with FinOps Foundation principles of visibility, accountability, collaboration, and business value realization.
+
+---
+
+# Scope
+
+This dictionary applies to:
+
+* AWS
+* Microsoft Azure
+* Google Cloud Platform
+* Kubernetes Platforms
+* AI and Machine Learning Workloads
+* Shared Services Platforms
+* Product Teams
+* Corporate IT Workloads
+* Enterprise Cloud Services
+
+---
+
+# KPI Classification Framework
+
+KPIs are organized into the following categories:
+
+| Category          | Purpose                                            |
+| ----------------- | -------------------------------------------------- |
+| Financial         | Financial performance and accountability           |
+| Governance        | Ownership, allocation, and compliance              |
+| Forecasting       | Planning and predictability                        |
+| Optimization      | Efficiency and waste reduction                     |
+| Engineering       | Resource utilization and operational effectiveness |
+| Unit Economics    | Business value and product efficiency              |
+| AI FinOps         | AI workload efficiency and economics               |
+| Kubernetes FinOps | Container platform efficiency                      |
+
+---
+
+# Financial KPIs
+
+## Total Cloud Spend
+
+| Attribute | Value                           |
+| --------- | ------------------------------- |
+| Category  | Financial                       |
+| Owner     | Finance and FinOps              |
+| Frequency | Monthly                         |
+| Purpose   | Measure total cloud expenditure |
+
+### Calculation
+
+```text
+Sum of Cloud Costs
+```
+
+### Data Sources
+
+* Cloud Billing Data
+* Cost Management Platforms
+* Financial Reporting Systems
+
+---
+
+## Cloud Spend Growth Rate
+
+| Attribute | Value                         |
+| --------- | ----------------------------- |
+| Category  | Financial                     |
+| Owner     | Finance and FinOps            |
+| Frequency | Monthly                       |
+| Purpose   | Measure cloud spending growth |
+
+### Calculation
+
+```text
+(Current Spend - Previous Spend)
+÷ Previous Spend
+```
+
+---
+
+## Cloud Spend as Percentage of Revenue
+
+| Attribute | Value                                      |
+| --------- | ------------------------------------------ |
+| Category  | Financial                                  |
+| Owner     | Finance                                    |
+| Frequency | Monthly or Quarterly                       |
+| Purpose   | Measure cloud spending relative to revenue |
+
+### Calculation
+
+```text
+Cloud Spend ÷ Revenue
+```
+
+---
+
+# Governance KPIs
 
 ## Allocation Coverage
 
-### Definition
+| Attribute | Value                                                       |
+| --------- | ----------------------------------------------------------- |
+| Category  | Governance                                                  |
+| Owner     | FinOps                                                      |
+| Frequency | Monthly                                                     |
+| Purpose   | Measure percentage of spend allocated to accountable owners |
 
-Percentage of technology spend assigned to a known owner, application, business unit, product, or cost center.
-
-### Formula
-
-```text
-Allocated Spend ÷ Total Spend × 100
-```
-
-### Target
+### Calculation
 
 ```text
-95%+
-```
-
-### Why It Matters
-
-Organizations cannot manage costs effectively without ownership.
-
----
-
-## Tagged Resource Coverage
-
-### Definition
-
-Percentage of resources containing required business and ownership metadata.
-
-### Formula
-
-```text
-Tagged Resources ÷ Total Resources × 100
-```
-
-### Target
-
-```text
-90%+
+Allocated Spend ÷ Total Spend
 ```
 
 ---
 
-# Financial Management KPIs
+## Resource Ownership Coverage
 
-## Budget Variance
+| Attribute | Value                        |
+| --------- | ---------------------------- |
+| Category  | Governance                   |
+| Owner     | Engineering and FinOps       |
+| Frequency | Monthly                      |
+| Purpose   | Measure ownership visibility |
 
-### Definition
-
-Difference between actual spend and approved budget.
-
-### Formula
-
-```text
-(Actual Spend - Budget) ÷ Budget × 100
-```
-
-### Target
+### Calculation
 
 ```text
-Within ±5%
+Owned Resources ÷ Total Resources
 ```
 
 ---
+
+## Tag Compliance Rate
+
+| Attribute | Value                                     |
+| --------- | ----------------------------------------- |
+| Category  | Governance                                |
+| Owner     | Engineering                               |
+| Frequency | Monthly                                   |
+| Purpose   | Measure compliance with tagging standards |
+
+### Calculation
+
+```text
+Compliant Resources ÷ Total Resources
+```
+
+---
+
+## Unallocated Spend
+
+| Attribute | Value                                       |
+| --------- | ------------------------------------------- |
+| Category  | Governance                                  |
+| Owner     | FinOps                                      |
+| Frequency | Monthly                                     |
+| Purpose   | Measure spend without accountable ownership |
+
+### Calculation
+
+```text
+Total Spend - Allocated Spend
+```
+
+---
+
+# Forecasting KPIs
 
 ## Forecast Accuracy
 
-### Definition
+| Attribute | Value                          |
+| --------- | ------------------------------ |
+| Category  | Forecasting                    |
+| Owner     | Finance and FinOps             |
+| Frequency | Monthly                        |
+| Purpose   | Measure forecast effectiveness |
 
-Measures how accurately future spending is predicted.
-
-### Formula
-
-```text
-1 - (|Forecast - Actual| ÷ Actual)
-```
-
-### Target
+### Calculation
 
 ```text
-95%+
+1 - (|Actual - Forecast|
+÷ Forecast)
 ```
 
-### Why It Matters
+---
 
-Accurate forecasts improve planning and reduce surprises.
+## Budget Variance
+
+| Attribute | Value                                   |
+| --------- | --------------------------------------- |
+| Category  | Forecasting                             |
+| Owner     | Finance                                 |
+| Frequency | Monthly                                 |
+| Purpose   | Measure deviation from approved budgets |
+
+### Calculation
+
+```text
+Actual Spend - Budget
+```
+
+---
+
+## Forecast Variance
+
+| Attribute | Value                           |
+| --------- | ------------------------------- |
+| Category  | Forecasting                     |
+| Owner     | Finance and FinOps              |
+| Frequency | Monthly                         |
+| Purpose   | Measure deviation from forecast |
+
+### Calculation
+
+```text
+Actual Spend - Forecast
+```
 
 ---
 
 # Optimization KPIs
 
-## Waste Percentage
+## Optimization Opportunity Value
 
-### Definition
+| Attribute | Value                                         |
+| --------- | --------------------------------------------- |
+| Category  | Optimization                                  |
+| Owner     | FinOps                                        |
+| Frequency | Monthly                                       |
+| Purpose   | Measure identified optimization opportunities |
 
-Percentage of spend identified as avoidable or unused.
-
-### Examples
-
-* Idle compute
-* Unattached storage
-* Overprovisioned resources
-* Unused snapshots
-* Unused load balancers
-
-### Formula
+### Calculation
 
 ```text
-Waste Spend ÷ Total Spend × 100
-```
-
-### Target
-
-```text
-Less than 10%
+Sum of Approved Opportunities
 ```
 
 ---
 
-## Savings Realized
+## Optimization Realization Rate
 
-### Definition
+| Attribute | Value                                        |
+| --------- | -------------------------------------------- |
+| Category  | Optimization                                 |
+| Owner     | Engineering and FinOps                       |
+| Frequency | Monthly                                      |
+| Purpose   | Measure optimization execution effectiveness |
 
-Verified reduction in spend resulting from optimization actions.
-
-### Formula
-
-```text
-Baseline Cost - Optimized Cost
-```
-
-### Target
-
-Continuous improvement
-
----
-
-## Optimization Backlog Completion
-
-### Definition
-
-Percentage of approved optimization opportunities completed.
-
-### Formula
+### Calculation
 
 ```text
-Completed Items ÷ Total Backlog Items × 100
-```
-
-### Target
-
-```text
-80%+
+Implemented Actions
+÷ Approved Actions
 ```
 
 ---
 
-# Commitment Management KPIs
+## Commitment Utilization
 
-## Savings Plan Coverage
+| Attribute | Value                                      |
+| --------- | ------------------------------------------ |
+| Category  | Optimization                               |
+| Owner     | FinOps                                     |
+| Frequency | Monthly                                    |
+| Purpose   | Measure effective use of cloud commitments |
 
-### Definition
-
-Percentage of eligible compute spend covered by Savings Plans.
-
-### Formula
-
-```text
-Covered Spend ÷ Eligible Spend × 100
-```
-
-### Target
-
-Organization specific
-
-Typical range:
+### Calculation
 
 ```text
-70% - 95%
+Consumed Commitment
+÷ Purchased Commitment
 ```
 
 ---
 
-## Savings Plan Utilization
+## Commitment Coverage
 
-### Definition
+| Attribute | Value                                    |
+| --------- | ---------------------------------------- |
+| Category  | Optimization                             |
+| Owner     | FinOps                                   |
+| Frequency | Monthly                                  |
+| Purpose   | Measure workload coverage by commitments |
 
-Percentage of purchased Savings Plan commitment consumed.
-
-### Formula
-
-```text
-Consumed Commitment ÷ Purchased Commitment × 100
-```
-
-### Target
+### Calculation
 
 ```text
-95%+
+Eligible Spend Covered
+÷ Eligible Spend
 ```
 
 ---
 
-## Reserved Instance Utilization
+# Engineering KPIs
 
-### Definition
+## Compute Utilization
 
-Percentage of reserved capacity actively used.
+| Attribute | Value                      |
+| --------- | -------------------------- |
+| Category  | Engineering                |
+| Owner     | Engineering Teams          |
+| Frequency | Monthly                    |
+| Purpose   | Measure compute efficiency |
 
-### Formula
+### Calculation
 
 ```text
-Consumed RI Hours ÷ Purchased RI Hours × 100
+Consumed Capacity
+÷ Provisioned Capacity
 ```
 
-### Target
+---
+
+## Storage Utilization
+
+| Attribute | Value                      |
+| --------- | -------------------------- |
+| Category  | Engineering                |
+| Owner     | Engineering Teams          |
+| Frequency | Monthly                    |
+| Purpose   | Measure storage efficiency |
+
+### Calculation
 
 ```text
-95%+
+Used Storage
+÷ Allocated Storage
+```
+
+---
+
+## Rightsizing Adoption Rate
+
+| Attribute | Value                                                 |
+| --------- | ----------------------------------------------------- |
+| Category  | Engineering                                           |
+| Owner     | Engineering Teams                                     |
+| Frequency | Monthly                                               |
+| Purpose   | Measure implementation of rightsizing recommendations |
+
+### Calculation
+
+```text
+Implemented Rightsizing Actions
+÷ Approved Rightsizing Actions
+```
+
+---
+
+## Resource Cleanup Rate
+
+| Attribute | Value                               |
+| --------- | ----------------------------------- |
+| Category  | Engineering                         |
+| Owner     | Engineering Teams                   |
+| Frequency | Monthly                             |
+| Purpose   | Measure removal of unused resources |
+
+### Calculation
+
+```text
+Removed Resources
+÷ Identified Resources
 ```
 
 ---
@@ -250,233 +388,215 @@ Consumed RI Hours ÷ Purchased RI Hours × 100
 
 ## Cost per Customer
 
-### Definition
+| Attribute | Value                                      |
+| --------- | ------------------------------------------ |
+| Category  | Unit Economics                             |
+| Owner     | Product Leadership                         |
+| Frequency | Monthly                                    |
+| Purpose   | Measure cloud cost efficiency per customer |
 
-Technology spend divided by active customers.
-
-### Formula
+### Calculation
 
 ```text
-Total Technology Cost ÷ Active Customers
+Cloud Spend ÷ Customers
 ```
 
-### Why It Matters
+---
 
-Helps evaluate scalability and business growth.
+## Cost per Active Customer
+
+| Attribute | Value                                             |
+| --------- | ------------------------------------------------- |
+| Category  | Unit Economics                                    |
+| Owner     | Product Leadership                                |
+| Frequency | Monthly                                           |
+| Purpose   | Measure cloud cost efficiency per active customer |
+
+### Calculation
+
+```text
+Cloud Spend ÷ Active Customers
+```
 
 ---
 
 ## Cost per Transaction
 
-### Definition
+| Attribute | Value                          |
+| --------- | ------------------------------ |
+| Category  | Unit Economics                 |
+| Owner     | Product Teams                  |
+| Frequency | Monthly                        |
+| Purpose   | Measure operational efficiency |
 
-Technology spend divided by completed business transactions.
-
-### Formula
+### Calculation
 
 ```text
-Total Technology Cost ÷ Total Transactions
+Cloud Spend ÷ Transactions
 ```
 
 ---
 
-## Cost per Application
+## Cost per User
 
-### Definition
+| Attribute | Value                             |
+| --------- | --------------------------------- |
+| Category  | Unit Economics                    |
+| Owner     | Product Teams                     |
+| Frequency | Monthly                           |
+| Purpose   | Measure cloud efficiency per user |
 
-Total cost associated with a specific application or service.
-
-### Formula
+### Calculation
 
 ```text
-Application Spend ÷ Number of Applications
+Cloud Spend ÷ Users
+```
+
+---
+
+# AI FinOps KPIs
+
+## Cost per AI Inference
+
+| Attribute | Value                          |
+| --------- | ------------------------------ |
+| Category  | AI FinOps                      |
+| Owner     | AI Platform Team               |
+| Frequency | Monthly                        |
+| Purpose   | Measure AI inference economics |
+
+### Calculation
+
+```text
+AI Spend ÷ Inference Requests
+```
+
+---
+
+## Cost per Training Run
+
+| Attribute | Value                            |
+| --------- | -------------------------------- |
+| Category  | AI FinOps                        |
+| Owner     | AI Platform Team                 |
+| Frequency | Monthly                          |
+| Purpose   | Measure training cost efficiency |
+
+### Calculation
+
+```text
+Training Spend ÷ Training Runs
+```
+
+---
+
+## Cost per GPU Hour
+
+| Attribute | Value                 |
+| --------- | --------------------- |
+| Category  | AI FinOps             |
+| Owner     | AI Platform Team      |
+| Frequency | Monthly               |
+| Purpose   | Measure GPU economics |
+
+### Calculation
+
+```text
+GPU Spend ÷ GPU Hours
 ```
 
 ---
 
 # Kubernetes FinOps KPIs
 
-## Cluster Utilization
+## Kubernetes Resource Efficiency
 
-### Definition
+| Attribute | Value                                     |
+| --------- | ----------------------------------------- |
+| Category  | Kubernetes FinOps                         |
+| Owner     | Platform Team                             |
+| Frequency | Monthly                                   |
+| Purpose   | Measure Kubernetes utilization efficiency |
 
-Percentage of allocated cluster resources actively consumed.
-
-### Formula
-
-```text
-Used Capacity ÷ Available Capacity × 100
-```
-
-### Target
-
-Organization specific
-
----
-
-## Idle Capacity Percentage
-
-### Definition
-
-Percentage of provisioned capacity not used.
-
-### Formula
+### Calculation
 
 ```text
-Idle Capacity ÷ Total Capacity × 100
-```
-
-### Target
-
-As low as practical
-
----
-
-# AI FinOps KPIs
-
-## Cost per Inference
-
-### Definition
-
-Average cost to process a single inference request.
-
-### Formula
-
-```text
-Inference Spend ÷ Number of Inference Requests
+Consumed Resources
+÷ Allocated Resources
 ```
 
 ---
 
-## Cost per Token
+## Cost per Kubernetes Workload
 
-### Definition
+| Attribute | Value                      |
+| --------- | -------------------------- |
+| Category  | Kubernetes FinOps          |
+| Owner     | Platform Team              |
+| Frequency | Monthly                    |
+| Purpose   | Measure workload economics |
 
-Average cost per token processed.
-
-### Formula
+### Calculation
 
 ```text
-Model Cost ÷ Total Tokens Processed
+Kubernetes Spend ÷ Workloads
 ```
 
 ---
 
-## GPU Utilization
+## Node Utilization
 
-### Definition
+| Attribute | Value                   |
+| --------- | ----------------------- |
+| Category  | Kubernetes FinOps       |
+| Owner     | Platform Team           |
+| Frequency | Monthly                 |
+| Purpose   | Measure node efficiency |
 
-Percentage of allocated GPU capacity actively consumed.
-
-### Formula
-
-```text
-Used GPU Capacity ÷ Allocated GPU Capacity × 100
-```
-
-### Target
+### Calculation
 
 ```text
-70%+
-```
-
----
-
-## AI Cost Variance
-
-### Definition
-
-Difference between expected AI spend and actual AI spend.
-
-### Formula
-
-```text
-(Actual AI Spend - Forecast AI Spend) ÷ Forecast AI Spend × 100
+Consumed Node Capacity
+÷ Available Node Capacity
 ```
 
 ---
 
-# Operational Excellence KPIs
+# KPI Governance
 
-## Anomaly Resolution Time
+All KPI definitions should:
 
-### Definition
+* Maintain consistent calculation methodologies.
+* Use approved data sources.
+* Align with governance standards.
+* Support executive and operational reporting.
+* Be reviewed periodically.
 
-Average time required to investigate and resolve cost anomalies.
-
-### Formula
-
-```text
-Total Resolution Time ÷ Number of Incidents
-```
-
-### Target
-
-```text
-Less than 5 business days
-```
-
----
-
-## Reporting Timeliness
-
-### Definition
-
-Percentage of reports delivered on schedule.
-
-### Formula
-
-```text
-Reports Delivered On Time ÷ Total Reports × 100
-```
-
-### Target
-
-```text
-100%
-```
-
----
-
-# Executive Dashboard KPIs
-
-The following KPIs should appear in executive reporting:
-
-* Total Spend
-* Budget Variance
-* Forecast Accuracy
-* Allocation Coverage
-* Savings Realized
-* Waste Percentage
-* Commitment Coverage
-* Commitment Utilization
-* Cost per Customer
-* Cost per Transaction
-* AI Cost per Inference
+Changes should be approved through the FinOps governance process.
 
 ---
 
 # KPI Review Process
 
-KPIs should be reviewed:
+KPI definitions should be reviewed:
 
-| Audience             | Frequency |
-| -------------------- | --------- |
-| Engineering Teams    | Weekly    |
-| FinOps Team          | Weekly    |
-| Finance Teams        | Monthly   |
-| Executive Leadership | Monthly   |
-| Steering Committee   | Quarterly |
+| Review Activity       | Frequency |
+| --------------------- | --------- |
+| KPI Validation        | Quarterly |
+| Data Quality Review   | Quarterly |
+| KPI Definition Review | Annual    |
+| Governance Review     | Annual    |
 
 ---
 
-# Document Information
+# Related Documents
 
-| Item             | Value          |
-| ---------------- | -------------- |
-| Document         | KPI Dictionary |
-| Version          | 1.0            |
-| Status           | Active         |
-| Owner            | FinOps Team    |
-| Review Frequency | Quarterly      |
-| Last Updated     | 2026           |
+* README.md
+* executive-kpis.md
+* engineering-kpis.md
+* unit-economics-kpis.md
+* governance-framework.md
+* allocation-framework.md
+* budget-framework.md
+* forecasting-framework.md
+* executive-reporting-framework.md
